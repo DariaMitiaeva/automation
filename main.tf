@@ -6,7 +6,7 @@ resource "aws_instance" "vms" {
     # ID образа для создания экземпляра ВМ — из переменной vm_template
     ami = var.vm_template
     
-    instance_type = each.value.vm_name
+    instance_type = var.vm_instance_type
     # Назначаем экземпляру внутренний IP-адрес из созданной ранее подсети в VPC
     subnet_id = var.vm_subnet
     # Подключаем к создаваемому экземпляру внутреннюю группу безопасности
