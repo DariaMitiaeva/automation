@@ -15,7 +15,7 @@ variable "admin" {
 }
 
 variable "az" {
-  default     = "ru-msk-comp1p"
+  default     = "ru-msk-vol51"
 }
 
 variable "vms_count" {
@@ -26,6 +26,9 @@ variable "vm_template" {
   default     = "cmi-D01767A6"
 }
 
+variable "vm_instance_type" {
+  default = "m5.2small"
+}
 variable "vm_volume_type" {
   default     = "gp2"
 }
@@ -33,20 +36,16 @@ variable "vm_volume_type" {
 variable "vm_map" {
   type = map(object({
     vm_name = string
-    vm_instance_type = string
   }))
   default = {
     "vm1" = {
       vm_name = "value"
-      vm_instance_type = "value"
     }
     "vm2" = {
       vm_name = "value"
-      vm_instance_type = "value"
     }
     "vm3" = {
       vm_name = "value"
-      vm_instance_type = "value"
     }
   }
 }
@@ -59,11 +58,11 @@ variable "vm_volume_size" {
 }
 
 variable "vm_subnet" {
-  default     = ""
+  default     = "subnet-EDE338E0"
 }
 
 variable "vm_securitygroup" {
-  default     = ""
+  default     = "sg-C64EBFA5"
 }
 
 variable "vms" {
